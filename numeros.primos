@@ -1,0 +1,24 @@
+
+# Programa em Python que exibe todos os números primos no intervalo entre x à y.
+# O valor inicial é x e o valor final é y
+x = int(input("digite um número imicial: "))
+y = int(input("digite um número final: "))
+while x >= y:
+  print("O valor inicial deve ser menor que o valor final")
+  x = int(input("digite um número imicial: "))
+  y = int(input("digite um número final: "))
+  
+  
+numeros_primos = []
+
+# Usando laço for para percorrer os números de x a y 
+for n in range(x, y): 
+  # Usando laço for novamente para checar os divisores, se o número for primo, o número é adicionado à lista.
+    for j in range(2, int(n/2)+1):
+        if n % j == 0:
+            break
+    else:
+        numeros_primos.append(n)
+  # Se o número de elementos contidos na lista for diferente de zero, a mensagem é exibida na tela.
+if len(numeros_primos)!=0:
+    print('Os núneros primos no intervalo de ' + str(x) + ' até ' + str(y) + ' são: ' + str(numeros_primos))
